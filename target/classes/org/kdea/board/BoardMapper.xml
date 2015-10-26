@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.kdea.board.BoardDAO"> <!--이 sql 문장과 매핑될 인터페이스의 완전한 경로-->
+
+
+ <resultMap id="boardvoMap" type="org.kdea.board.BoardVO">
+    </resultMap>
+    
+  <select id="getAllListDAO" parameterType="java.util.Map" statementType="CALLABLE">
+    	{ CALL BOARDLIST( #{ key, jdbcType=CURSOR, mode=OUT, javaType=java.sql.ResultSet,resultMap=boardvoMap } ) }
+    </select>
+    
+    <select id="getPostDAO" parameterType="java.util.Map" statementType="CALLABLE">
+    	{CALL BOARDREAD(#{a_num, mode=IN},
+    				 #{key, jdbcType=CURSOR, mode=OUT, javaType=java.sql.ResultSet,resultMap=boardvoMap})}
+    </select>
+    
+    <select id="getPagelist" parameterType="java.util.Map" statementType="CALLABLE">
+    	{CALL BOARDpageLIST(#{i_num, mode=IN},
+    				 #{key, jdbcType=CURSOR, mode=OUT, javaType=java.sql.ResultSet,resultMap=boardvoMap})}
+    </select>
+    <select id="getTotalRows" resultType="java.lang.Integer">
+   		 select count(*) from article
+    </select>
+   <!--  //여기 들어갈 오라클 프로시저도 만들어줘야함 일단은 인서트 한개인데 ㅎ 
+    파일 추가해야하고
+    델리트 하면 트리거 돌려서 자식글 있으면 삭제 ㄴㄴ하게 ㅇㅋ./ -->
+<!--      <select id="inputpostDAO" parameterType="java.util.Map" statementType="CALLABLE">
+    	{CALL BOARDNEWPOST(#{, mode=IN},
+    				 #{key, jdbcType=CURSOR, mode=OUT, javaType=java.sql.ResultSet,resultMap=boardvoMap})}
+    </select> -->
+    <insert id="inputpostDAO" parameterType="org.kdea.board.BoardVO">
+        insert into article (a_num,a_title,a_author,a_contents,a_hitcnt,a_date,a_ref,a_fnum) 
+        	values (AR_SEQ.NEXTVAL,#{a_title},#{a_author},#{a_contents},#{a_hitcnt},SYSDATE,#{a_ref},#{a_fnum})
+    </insert>
+</mapper>
