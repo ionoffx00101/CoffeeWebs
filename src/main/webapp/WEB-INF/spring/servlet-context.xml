@@ -47,7 +47,8 @@
 		class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
 		<beans:property name="definitions">
 			<beans:list>
-				<beans:value>/WEB-INF/views/tiles/tiles-definition.xml</beans:value>
+				<beans:value>/WEB-INF/views/boot/tiles-definition.xml</beans:value>
+				<!-- <beans:value>/WEB-INF/views/tiles/tiles-definition.xml</beans:value> -->
 				<beans:value>/WEB-INF/views/**/views.xml</beans:value>
 			</beans:list>
 		</beans:property>
