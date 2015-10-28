@@ -18,4 +18,11 @@ public class tilesCont {
         return "boot/tilesList";
     }
     
+    @RequestMapping(value="home2", method=RequestMethod.GET)
+    public String home2(Model model,HttpServletRequest request) {
+    	if(request.getSession().getAttribute("LoginStatus")==null){
+    		request.getSession().setAttribute("LoginStatus",false);
+    	};
+        return "game/tilesList";
+    }
 }

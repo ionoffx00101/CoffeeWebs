@@ -20,7 +20,11 @@
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving 
 		up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
-
+	<resources mapping="/css/**" location="/css/" />
+	<resources mapping="/js/**" location="/js/" />
+	<resources mapping="/font/**" location="/font/" />
+	<resources mapping="/img/**" location="/img/" />
+	
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
 		in the /WEB-INF/views directory -->
 	<beans:bean
@@ -30,7 +34,7 @@
 		<beans:property name="contentType" value="text/html; charset=UTF-8" />
 		<beans:property name="order" value="0" />
 	</beans:bean>
-	
+
 	<!-- 타일즈 뷰 리졸버 선언 -->
 	<beans:bean id="viewResolver"
 		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
@@ -41,7 +45,7 @@
 		</beans:property>
 		<beans:property name="order" value="1" />
 	</beans:bean>
-	
+
 	<!-- Tiles configuration -->
 	<beans:bean id="tilesConfigurer"
 		class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
@@ -54,16 +58,12 @@
 		</beans:property>
 	</beans:bean>
 
-<!-- 	<beans:bean id="simpleChatHandler"
-		class="org.kdea.spring.websocket.SimpleWebSocketHandler" />
-	<websocket:handlers>
-		<websocket:mapping path="/simpleBoard" handler="simpleWebHandler" />
-		<websocket:handshake-interceptors>
-			<beans:bean class="org.kdea.Board.HandshakeInterceptor" />
-		</websocket:handshake-interceptors>
-	</websocket:handlers> -->
-	<!-- 타일즈 뷰 리졸버 선언  끝-->
-	
+	<!-- <beans:bean id="simpleChatHandler" class="org.kdea.spring.websocket.SimpleWebSocketHandler" 
+		/> <websocket:handlers> <websocket:mapping path="/simpleBoard" handler="simpleWebHandler" 
+		/> <websocket:handshake-interceptors> <beans:bean class="org.kdea.Board.HandshakeInterceptor" 
+		/> </websocket:handshake-interceptors> </websocket:handlers> -->
+	<!-- 타일즈 뷰 리졸버 선언 끝 -->
+
 	<!-- spring jdbc -->
 	<beans:bean id="dataSource" class="oracle.jdbc.pool.OracleDataSource">
 		<beans:property name="dataSourceName" value="ds" />
@@ -76,8 +76,7 @@
 	<!-- mybatis -->
 	<beans:bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<!-- <beans:property name="mapperLocations" value="classpath:org/kdea/mybatis/*.xml"/> -->
-		<beans:property name="mapperLocations"
-			value="classpath:org/kdea/board/*.xml" />
+		<beans:property name="mapperLocations" value="classpath:org/kdea/board/*.xml" />
 		<beans:property name="dataSource" ref="dataSource" />
 
 	</beans:bean>
@@ -87,8 +86,8 @@
 
 	</beans:bean>
 	<!-- mybatis 끝 -->
-	
+
 	<!-- 파일업로드 관련 -->
-	<beans:bean id="multipartResolver"  
-  		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
+	<beans:bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
 </beans:beans>

@@ -15,6 +15,16 @@
     </put-list-attribute> -->
     </definition>
     
+     <definition name="gameTemplate" template="/WEB-INF/views/game/template.jsp">
+        <put-attribute name="header" value="/WEB-INF/views/game/header.jsp" />
+        <put-attribute name="menu" value="/WEB-INF/views/game/menu.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/views/game/footer.jsp" />
+       <!--  <put-list-attribute name="javascripts">
+        <add-attribute value="http://code.jquery.com/jquery-2.1.4.min.js" />
+        <add-attribute value="/resources/login_js.js" />
+    </put-list-attribute> -->
+    </definition>
+    
 </tiles-definitions>
 <!-- 아래처럼 다수개의 definition을 정의하면서 extends속성을 이용하여 기본 정의를
 상속하여 사용할 수도 있고, 다수개의 xml 파일에 나누어 정의할 수도 있다 -->
