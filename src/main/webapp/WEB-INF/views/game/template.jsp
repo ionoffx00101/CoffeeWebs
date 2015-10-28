@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%-- <tiles:importAttribute name="javascripts"/> --%>
 <html>
     <head>
@@ -14,19 +14,19 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
-<link href="../resources/css/4-col-portfolio.css" rel="stylesheet">
+<link href="<c:url value="../resources/css/4-col-portfolio.css"/>" rel="stylesheet">
 <!--  -->
-<link href="../resources/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="<c:url value="../resources/css/bootstrap.css"/>" rel='stylesheet' type='text/css' />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <!-- <script src="../resources/js/jquery-1.11.0.min.js"></script> -->
 <!-- Custom Theme files -->
-<link href="../resources/css/style.css" rel='stylesheet' type='text/css' />
+<link href="<c:url value="../resources/css/style.css"/>" rel='stylesheet' type='text/css' />
 <!-- Custom Theme files -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Google Fonts -->
 <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
-<script type="text/javascript" src="../resources/js/jquery.mixitup.min.js"></script>
+<script type="text/javascript" src="<c:url value="../resources/js/jquery.mixitup.min.js"/>"></script>
 <script type="text/javascript">
 $(function () {
 	

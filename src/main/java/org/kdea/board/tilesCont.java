@@ -25,4 +25,12 @@ public class tilesCont {
     	};
         return "game/tilesList";
     }
+    
+    @RequestMapping(value="page", method=RequestMethod.GET)
+    public String page(Model model,HttpServletRequest request) {
+    	if(request.getSession().getAttribute("LoginStatus")==null){
+    		request.getSession().setAttribute("LoginStatus",false);
+    	};
+        return "game/tilesHome";
+    }
 }
