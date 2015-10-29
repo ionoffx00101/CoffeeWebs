@@ -33,4 +33,14 @@ public class tilesCont {
     	};
         return "game/tilesHome";
     }
+    
+    
+    
+    @RequestMapping(value="game", method=RequestMethod.GET)
+    public String gamelnk(Model model,HttpServletRequest request) {
+    	if(request.getSession().getAttribute("LoginStatus")==null){
+    		request.getSession().setAttribute("LoginStatus",false);
+    	};
+        return "game/gamepage";
+    }
 }

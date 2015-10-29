@@ -11,8 +11,8 @@
 		<div class="navigation">
 			<ul class="navig cl-effect-3" >
 				<li><a href="page">Home</a></li>
-				<li><a href="home2">Games</a></li>
-				<li><a href="blog.html">Blog</a></li>
+				<li><a href="game">Games</a></li>
+				<li><a href="home2">이미지</a></li>
 				<li><a href="features.html">Features</a></li>
 				<li><a href="contact.html">Contact</a></li>
 			</ul>
